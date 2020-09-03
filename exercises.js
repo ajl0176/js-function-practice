@@ -38,15 +38,47 @@ function maxOfThree(num1, num2, num3){
   // ---------------------
   // Write a function rovarspraket() that will translate a text into "rövarspråket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
   // ---------------------
+var translate = function (text){
+  var string = text.toLowerCase();
+  var vowels = ["a", "e", "i", "o", "u", " "];
+  var y ="";
+  for (i = 0; i < string.length; i++) {
+    var current = string.charAt(i);
+    if (vowels.indexOf(current) != -1){
+      y = (y + (current));
+    } else {
+      y = (y + (current + "o" + current));
+    }
+  }
+  return y;
+}
 
-
+console.log(translate("this is fun"));
 
   // ---------------------
   // Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
   // ---------------------
+var sum = function(array) {
+  var length = array.length;
+  var total = 0;
+  for (i = 0; i < length; i++){
+    total += array [i];
+  }
+  return total;
+};
 
+console.log(sum([1,2,3,4]));
 
+var multiply = function(array){
+  var length = array.length;
+  var total = 1;
+  for (i = 0; i < length; i++) {
+  total *= array[i];
+  }
+  return total;
+};
 
+console.log(multiply([1,2,3,4]));
   // ---------------------
   // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
   // ---------------------
