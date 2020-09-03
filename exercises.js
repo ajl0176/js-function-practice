@@ -11,7 +11,7 @@ function max(num1, num2){
     return num2;
   }
 }
-
+console.log(max(5,9));
 
   // ---------------------
   // Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
@@ -26,13 +26,33 @@ function maxOfThree(num1, num2, num3){
     return num3;
   }
 }
+console.log(maxOfThree(8, 5, 9));
 
 //const maxOfThree = (num1, num2, num3) => Math.max (num1, num2, num3);
 
   // ---------------------
   // Define a function isVowel() that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
   // ---------------------
+function isVowel(argument) {
+  var text;
+  var argument = argument.toLowerCase();
+  var vowels = (['a', 'e', 'i', 'o', 'u']);
 
+  for (var i = 0; i <= vowels.length; i++){
+    if (argument != vowels [i]) {
+      continue;
+    }
+    return true;
+  }
+  return false;
+}
+
+var char = "A";
+if (isVowel(char)){
+  console.log(char + " is a vowel");
+} else{
+  console.log(char + " is not a vowel");
+}
 
 
   // ---------------------
@@ -83,24 +103,63 @@ console.log(multiply([1,2,3,4]));
   // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
   // ---------------------
 
+  function reverse(string) {
+      var text = '';
 
+      for (var i = string.length - 1; i >= 0; i--) {
+      	text += string[i];
+      	continue
+      }
+      return text.toLowerCase();
+  }
+  console.log(reverse("gnidoc"));
 
   // ---------------------
   // Define a function findLongestWord() that takes an array of words and returns the length of the longest one.
   // ---------------------
+var findLongestWord = function (array){
+  var elements = array.length;
+  var count = 0;
+  for (i = 0; i < elements; i++) {
+    if (array[i].length > count)
+      count = array[i].length;
+  }
+return count;
+}
 
-
+console.log(findLongestWord(['carolina', 'coding', 'school', 'javascript']));
 
   // ---------------------
   // Define a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
   // ---------------------
-
+var filterLongWords  = function (array, int) {
+  var length = array.length;
+  var longestWords = [];
+  for (i = 0; i < length; i++){
+    if (array[i].length > int) {
+      longestWords[longestWords.length] = array[i];
+    }
+  }
+  return longestWords;
+}
 
 
   // ---------------------
   // Define a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
   // ---------------------
+var charFreq = function(string){
+  var list = {};
+  var length = string.length;
+  for (var i=0; i < length; i++) {
+    if (string.charAt(i) in list)
+    list[string.charAt(i)] += +1;
+    else
+    list[string.charAt(i)] = 1;
+    }
+    return list;
+  }
 
+  console.log(charFreq("abbabcbdbabdbdbabababcbcbab"));
 
   ////////////////////////////////////////////////////////////////////////
   /////////////////////////DO NOT CHANGE CODE BELOW///////////////////////
