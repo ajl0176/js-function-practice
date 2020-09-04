@@ -55,7 +55,9 @@ setTimeout(sayHi, 2000);
 
 // Put your answer below -------------------------
 
-
+setTimeout(function() {
+  alert("Hello, World!");
+}, 2000);
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
@@ -66,10 +68,10 @@ setTimeout(sayHi, 2000);
 // The code below will log the letter twice. What
 // is the order that will be logged?
 
-// [a]: x then y then z
-// [b]: y then z
-// [c]: z then y
-// [d]: x then z
+//[a]: x then y then z
+//[b]: y then z
+//[c]: z then y
+//[d]: x then z
 
 // Please explain your answer.
 
@@ -84,7 +86,8 @@ letter = "z";
 console.log("The letter is", letter);
 
 // Put your answer below -------------------------
-
+z then y. var letter x is a global variable. Letter y overrides the global var but is a parameter
+So z will be the first to be executed, then y.
 
 // -----------------------------------------------
 
@@ -107,7 +110,12 @@ var reverseStr = function(str) {
 
 // Put your answer below -------------------------
 
-
+var reverseStr = function(str) {
+  return str.split("").reverse().join("");
+};
+reverseStr("hello")
+}
+}
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
@@ -140,6 +148,19 @@ var spanishColor = function(colorName) {
 };
 
 // Put your answer below -------------------------
+const colors = {
+  rojo: "#ff0000",
+  blanco: "#ffffff",
+  azul: "#0000ff",
+  verde: "#00ff00",
+  negro: "#000000",
+}
+
+function spanishColor (colorName) {
+
+return colors[colorName];
+
+}
 
 
 // -----------------------------------------------
@@ -157,7 +178,8 @@ var spanishColor = function(colorName) {
 var foo = "bar";
 
 // Put your answer below -------------------------
-
+var foo;
+foo = "bar";
 
 // -----------------------------------------------
 
@@ -180,7 +202,12 @@ var callTenTimes = function(callback) {
 
 // Put your answer below -------------------------
 
-
+var callNtimes = function(num,callback) {
+for(var i= 0; i < num; i++) {
+  console.log(callback)
+  }
+};
+callNtimes(num,callback);
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
@@ -254,7 +281,15 @@ var accelerate = function(amount) {
 
 // Put your answer below -------------------------
 
+var speed = 0;
 
+var accelerate = function(amount) {
+  if(amount === 0) {
+    speed += 1;
+  } else {
+    speed += amount;
+  }
+}
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
